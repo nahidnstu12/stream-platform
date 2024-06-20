@@ -5,7 +5,8 @@
   "license": "MIT",
   "author": "Mazharul Islam",
   "scripts": {
-    "dev": "nodemon index start"
+    "dev:v1": "nodemon index start",
+    "dev:v2": "nodemon app.js start"
   },
   "dependencies": {
     "cors": "^2.8.5",

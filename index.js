@@ -36,7 +36,8 @@ app.use((req, res, next) => {
 app.get("/", (req, res) => {
   return res.send("Welcome our streaming platform!");
 });
-const CHUNK_SIZE = 10 * 1024 * 1024; // 1MB
+
+const CHUNK_SIZE = 1 * 1024 * 1024; // 1MB
 app.get("/video", (req, res) => {
   const videoPath = path.join(__dirname, "/assets/videos/video1.mp4");
   const stat = fs.statSync(videoPath);
@@ -50,7 +51,6 @@ app.get("/video", (req, res) => {
     // const end = parts[1] ? parseInt(parts[1], 10) : fileSize - 1;
     const end = Math.min(start + CHUNK_SIZE - 1, fileSize - 1);
 
-    console.log("parts", parts, start, "end", end, "filesize", fileSize);
     if (start >= fileSize) {
       res
         .status(416)
