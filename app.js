@@ -37,6 +37,10 @@ app.get("/:segment", videoRateLimitSegments, (req, res) => {
   res.sendFile(filePath);
 });
 
+app.get("/", (req, res) => {
+  res.sendFile(path.join(__dirname, "dash-player.html"));
+});
+
 app.listen(port, () => {
   console.log(`Server running at http://localhost:${port}`);
 });

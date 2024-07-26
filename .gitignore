@@ -138,3 +138,5 @@ temp/
 
 # Exclude compiled and bundled files
 dist/
+
+farhad.pem
